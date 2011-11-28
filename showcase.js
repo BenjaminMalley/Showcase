@@ -1,6 +1,8 @@
+//showcase.js
+//written using jquery 1.7.0
 var showcase_width;
-var animation_time = 2000;
-var interval_time = 8000;
+var animation_time = 2000; //time for slides to animate
+var interval_time = 8000; //time to display each slide before advancing
 var animation_interval;
 
 var next_slide = function() {
@@ -18,6 +20,8 @@ var previous_slide = function() {
 	reset_timer();
 };
 
+//timer must be reset on document ready and on each manual advance
+//TO DO: create flag to turn off automatic advance
 var reset_timer = function() {
 	if(animation_interval) {
 		clearInterval(animation_interval);
@@ -37,10 +41,11 @@ $(document).ready(function() {
 	});
 	$('.slide-wrapper').css('width', showcase_width);   //make the slide-wrappers the same width as the showcase
 	
+	//handle clicks on left and right buttons to manually advance slides
 	$(document).on('click', '.slide-button.right', next_slide);
-	
 	$(document).on('click', '.slide-button.left', previous_slide); 
 
+	//starts the slideshow
 	reset_timer();
 });
 	
