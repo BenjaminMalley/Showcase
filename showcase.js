@@ -1,17 +1,28 @@
 var showcase_width;
 var animation_time = 2000;
+var interval_time = 8000;
+var animation_interval;
 
 var next_slide = function() {
 	$('#slide-reel').animate({left: '-=' + showcase_width, }, animation_time, function() {   //move the slide-reel to the left
 		$('#slide-reel').css('padding-left', '+=' + showcase_width);   //pad the left of the slide-reel
 		$('#slide-reel').append($('.slide-wrapper:first'));   //move the first slide to the end of the reel
 	});
+	reset_timer();
 };
 
 var previous_slide = function() { 
 	$('#slide-reel').css('padding-left', '-=' + showcase_width);   //make some room on the left side of the slide-reel for an additional slide
 	$('#slide-reel').prepend($('.slide-wrapper:last'));   //move the last slide to the beginning of the reel
 	$('#slide-reel').animate({'padding-left': '+=' + showcase_width, }, animation_time);   //move the slide-reel to the right
+	reset_timer();
+};
+
+var reset_timer = function() {
+	if(animation_interval) {
+		clearInterval(animation_interval);
+	}
+	animation_interval = setInterval(next_slide, interval_time);
 };
 
 $(document).ready(function() {
@@ -30,7 +41,7 @@ $(document).ready(function() {
 	
 	$(document).on('click', '.slide-button.left', previous_slide); 
 
-	setInterval(next_slide, 10000);
+	reset_timer();
 });
 	
 //resize the slideshow
