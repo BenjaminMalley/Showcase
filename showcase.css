@@ -2,19 +2,32 @@ body {
 	font: 12px normal Arial, Helvetica;
 }
 .slide-height {
+	/* the showcase has a fixed height.
+	if this value is modified, the slide buttons will not be aligned correctly
+	modify the margin-top value for slide-button class to correct */
 	height: 300px;
 }
+
+/* window for viewing slides
+we use overflow: hidden to prevent any slides not in the window from being displayed */
 #showcase {
-	width: 75%;
+	width: 75%; /* this width can be modified safely */
 	margin: auto;
 	overflow: hidden;
 }
+
+/* contains all of the slide wrappers--width is set dynamically by showcase.js */
 #slide-reel {
 	position: relative;
 }
+
+/* the slide-wrapper allows us to vary the width of the slide itself without being pixel precise */
 .slide-wrapper {
 	float: left;
 }
+
+/* by default, the slide is set to 80% of the width of the wrapper--this gives us some margin to play with */
+/* the slide contains the left and right buttons as well as the content itself */
 .slide {
 	border: 1px solid #D1D1D1;
 	-webkit-border-radius: 5px;
@@ -34,7 +47,8 @@ body {
 .slide-button.left {
 	/*margin-top: 105px;*/
 	float: left;
-	background-image: url('arrow_left.png'); /* fix for browsers lacking SVG support -- http://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/ */
+	/* fix for browsers lacking SVG support -- http://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/ */
+	background-image: url('arrow_left.png');
 	background-image: none,url('arrow_left.svg'), url('arrow_left.png');
 }
 .slide-button.left:hover {
