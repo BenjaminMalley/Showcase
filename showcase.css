@@ -48,22 +48,22 @@ we use overflow: hidden to prevent any slides not in the window from being displ
 	/*margin-top: 105px;*/
 	float: left;
 	/* fix for browsers lacking SVG support -- http://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/ */
-	background-image: url('arrow_left.png');
-	background-image: none,url('arrow_left.svg'), url('arrow_left.png');
+	background-image: url('images/arrow_left.png');
+	background-image: none,url('images/arrow_left.svg'), url('images/arrow_left.png');
 }
 .slide-button.left:hover {
-	background-image: url('arrow_left_hover.png');
-	background-image: none,url('arrow_left_hover.svg'), url('arrow_left_hover.png');
+	background-image: url('images/arrow_left_hover.png');
+	background-image: none,url('images/arrow_left_hover.svg'), url('images/arrow_left_hover.png');
 }
 .slide-button.right {
 	/*margin-bottom: 105px;*/
 	float: right;
-	background-image: url('arrow_right.png');
-	background-image: none,url('arrow_right.svg'), url('arrow_right.png');
+	background-image: url('images/arrow_right.png');
+	background-image: none,url('images/arrow_right.svg'), url('images/arrow_right.png');
 }
 .slide-button.right:hover {
-	background-image: url('arrow_right_hover.png');
-	background-image: none,url('arrow_right_hover.svg'), url('arrow_right_hover.png');
+	background-image: url('images/arrow_right_hover.png');
+	background-image: none,url('images/arrow_right_hover.svg'), url('images/arrow_right_hover.png');
 }
 .button-arrow {
 	fill: #fff;
