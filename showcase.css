@@ -43,10 +43,10 @@ we use overflow: hidden to prevent any slides not in the window from being displ
 	margin-top: 105px;
 	height: 30px;
 	width: 30px;
+	float: left;
 }
 .slide-button.left {
 	/*margin-top: 105px;*/
-	float: left;
 	/* fix for browsers lacking SVG support -- http://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/ */
 	background-image: url('images/arrow_left.png');
 	background-image: none,url('images/arrow_left.svg'), url('images/arrow_left.png');
@@ -57,7 +57,6 @@ we use overflow: hidden to prevent any slides not in the window from being displ
 }
 .slide-button.right {
 	/*margin-bottom: 105px;*/
-	float: right;
 	background-image: url('images/arrow_right.png');
 	background-image: none,url('images/arrow_right.svg'), url('images/arrow_right.png');
 }
@@ -72,4 +71,8 @@ we use overflow: hidden to prevent any slides not in the window from being displ
 }
 .button-arrow:hover {
 	stroke: #fff;
+}
+.slide-content {
+	float: left;
+	padding: 20px;
 }

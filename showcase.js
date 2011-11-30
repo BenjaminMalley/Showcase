@@ -31,8 +31,9 @@ var reset_timer = function() {
 
 $(document).ready(function() {
 
-	showcase_width = $('#showcase').css('width');   //set the initial showcase width
+	showcase_width = $('#showcase').css('width');	//set the initial showcase width
 
+	
 	$('#slide-reel').css({
 		'width': String($('.slide-wrapper').length) + '00%',  //set the slide reel width to n*100% for n slides
 		//set some initial padding in case the user wants to click left first
@@ -40,6 +41,8 @@ $(document).ready(function() {
 		'padding-left': showcase_width,
 	});
 	$('.slide-wrapper').css('width', showcase_width);   //make the slide-wrappers the same width as the showcase
+	$('.slide-content').css('width', $('.slide').css('width')); //set the content width
+	$('.slide-content').css('width', '-=100'); //subtract the static values of the left and right buttons and padding
 	
 	//handle clicks on left and right buttons to manually advance slides
 	$(document).on('click', '.slide-button.right', next_slide);
@@ -52,5 +55,7 @@ $(document).ready(function() {
 //resize the slideshow
 $(window).resize(function() {
 	showcase_width = $('#showcase').css('width');	
-	$('.slide-wrapper').css('width', showcase_width);   //update the slide-wrappers on resize
+	$('.slide-wrapper').css('width', showcase_width);   //update the slide-wrappers on resize 
+	$('.slide-content').css('width', $('.slide').css('width')); //set the content width
+	$('.slide-content').css('width', '-=100'); //subtract the static values of the left and right buttons and padding
 });
